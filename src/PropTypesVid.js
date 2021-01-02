@@ -1,6 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function DefaultProps(props) {
+
+function PropTypesVid(props) {
 
     const styles = {
         backgroundColor: props.cardColor,
@@ -16,10 +18,10 @@ function DefaultProps(props) {
     )
 }
 
-DefaultProps.defaultProps = {
-    cardColor: "white",
-    height: 100,
-    width: 100
+PropTypesVid.propTypes = {
+    cardColor: PropTypes.oneOf(['blue', 'red']).isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired
 }
 
-export default DefaultProps
+export default PropTypesVid
