@@ -1,14 +1,14 @@
-import './App.css';
 import React from 'react'
 import TypingGame from './SpeedType/TypingGame';
 import TodoList from './TodoList/TodoList';
+import ThemeSwitcher from './UseContext/ThemeSwitcher';
 
 
 function App() {
 
   return (
     <div>
-      <TypingGame />
+      <ThemeSwitcher />
     </div>
   );
 }
