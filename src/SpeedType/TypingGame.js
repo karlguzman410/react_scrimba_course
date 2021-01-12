@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 function TypingGame() {
 
@@ -8,6 +8,8 @@ function TypingGame() {
     const [timer, setTimer] = useState(STARTING_TIME)
     const [round, setRound] = useState(false)
     const [numberOfWords, setNumberOfWords] = useState(0)
+
+    const textRef = useRef(null)
 
     function handleChange(event) {
         const { value } = event.target
@@ -32,6 +34,7 @@ function TypingGame() {
 
     useEffect(() => {
         if (round === true & timer > 0) {
+            textRef.current.focus()
             setTimeout(() => {
                 setTimer(prevTime => prevTime - 1)
             }, 1000)
@@ -52,6 +55,7 @@ function TypingGame() {
         <div>
             <h1>Typing Game</h1>
             <textarea
+                ref={textRef}
                 name="text"
                 value={text}
                 onChange={handleChange}
