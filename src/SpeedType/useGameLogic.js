@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
-function useGameLogic(props) {
+function useGameLogic() {
     const STARTING_TIME = 5
     const [text, setText] = useState('')
     const [timer, setTimer] = useState(STARTING_TIME)
